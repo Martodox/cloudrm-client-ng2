@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.route'
+import { HttpClient } from '../api/HttpClient';
 
+
+import { SessionApi } from '../api/SessionApi'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
@@ -18,7 +21,10 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    SessionApi
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
