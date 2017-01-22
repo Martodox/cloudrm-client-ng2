@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { HttpClient } from '../../api/HttpClient';
 import { SessionApi } from '../../api/SessionApi';
 import { Credentials } from '../../models/Credentials';
@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
       private _sessionApi: SessionApi,
-      private _httpClient: HttpClient
+      private _httpClient: HttpClient,
+      private _router: Router
   ) { }
 
   ngOnInit() {
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
       this._httpClient.setToken(res);
 
       this._sessionApi.retrieve().subscribe(res => {
-        console.log(res)
+        this._router.navigate(['/dashboard']);
       }, err => {
         console.log('getting user data error', err)
       })
