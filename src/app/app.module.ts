@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.route'
 import { HttpClient } from '../api/HttpClient';
-
+import { DashboardModule } from './dashboard/dashboard.module';
 
 import { SessionApi } from '../api/SessionApi'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    DashboardModule
   ],
   providers: [
     HttpClient,
