@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUr: 'http://cloudrm.pro:3000'
+  apiUr: 'http://api.cloudrm.pro'
 };
