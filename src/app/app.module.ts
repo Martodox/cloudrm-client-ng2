@@ -10,7 +10,6 @@ import { SessionApi } from '../api/SessionApi'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

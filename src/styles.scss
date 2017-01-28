@@ -1,2 +1,10 @@
 $bootstrap-sass-asset-helper: true;
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+.position-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
