@@ -1,2 +1,16 @@
 $bootstrap-sass-asset-helper: true;
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+
+body {
+  background-color:#e0e0e0;
+  -webkit-font-smoothing: antialiased;
+  font: normal 14px Roboto,arial,sans-serif;
+}
+
+.position-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}

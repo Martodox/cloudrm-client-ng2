@@ -5,6 +5,7 @@ import { DevicesComponent } from './devices/devices.component';
 import { DashboardComponent } from './dashboard.component';
 import { Authguard } from './authguard';
 import { dashboardRouting } from './dashboard.route';
+import { SessionResolverService } from './session-resolver.service';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { dashboardRouting } from './dashboard.route';
     DashboardComponent
   ],
   providers: [
-    Authguard
+    Authguard,
+    SessionResolverService
   ],
   exports: [ DashboardComponent ]
 })

@@ -5,11 +5,10 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.route'
 import { HttpClient } from '../api/HttpClient';
 import { DashboardModule } from './dashboard/dashboard.module';
-
+import { NotAuthguard } from './not-authguard'
 import { SessionApi } from '../api/SessionApi'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
 
 @NgModule({
   declarations: [
@@ -25,7 +24,8 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     HttpClient,
-    SessionApi
+    SessionApi,
+    NotAuthguard
   ],
   bootstrap: [AppComponent]
 })

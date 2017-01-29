@@ -1,18 +1,14 @@
-import { Inject, Injectable, Optional }                      from '@angular/core';
-import { HttpClient }                                           from './HttpClient';
-import { RequestMethod, RequestOptions, RequestOptionsArgs } from '@angular/http';
-import { Response, ResponseContentType }                     from '@angular/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from './HttpClient';
+import { RequestMethod, RequestOptions} from '@angular/http';
+import { Response } from '@angular/http';
 
-import { Observable }                                        from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Account } from '../models/Account';
-import { Credentials } from '../models/Credentials';
+import { Token, Credentials, Account } from './../models/models';
 
 import { environment } from '../environments/environment';
-
-/* tslint:disable:no-unused-variable member-ordering */
-
 
 @Injectable()
 export class SessionApi {
@@ -28,9 +24,9 @@ export class SessionApi {
      * Logs an user to the system returning token
      *
      * @param credentials
-     * @returns {Observable<R>}
+     * @returns {Observable<Token>}
      */
-    public login(credentials: Credentials): Observable<string> {
+    public login(credentials: Credentials): Observable<Credentials> {
 
         return this.http.request(this.basePath, new RequestOptions({
             method: RequestMethod.Post,
@@ -48,9 +44,9 @@ export class SessionApi {
     /**
      * Gets users data from the system
      *
-     * @returns {Observable<R>}
+     * @returns {Observable<Account>}
      */
-    public retrieve(): Observable<string> {
+    public retrieve(): Observable<Account> {
 
         return this.http.request(this.basePath, new RequestOptions({
             method: RequestMethod.Get
@@ -62,6 +58,12 @@ export class SessionApi {
                     return response.json();
                 }
             });
+    }
+
+    public logout(): Observable<any> {
+      return this.http.request(this.basePath, new RequestOptions({
+        method: RequestMethod.Delete
+      }))
     }
 
 }
