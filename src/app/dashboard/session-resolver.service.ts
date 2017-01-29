@@ -15,7 +15,15 @@ export class SessionResolverService implements Resolve<any>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
 
-    return this.sessionApi.retrieve();
+    return new Promise(resolve => {
+      this.sessionApi.retrieve().subscribe(response => {
+        resolve(response);
+      }, error => {
+        localStorage.removeItem('token');
+        this.router.navigate(['/login']);
+        resolve(null)
+      });
+    })
 
   }
 
