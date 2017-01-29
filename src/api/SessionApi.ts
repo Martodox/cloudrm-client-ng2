@@ -60,4 +60,10 @@ export class SessionApi {
             });
     }
 
+    public logout(): Observable<any> {
+      return this.http.request(this.basePath, new RequestOptions({
+        method: RequestMethod.Delete
+      }))
+    }
+
 }

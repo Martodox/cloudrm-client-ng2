@@ -16,7 +16,7 @@ export const dashboardRoutes: Routes = [
     },
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'devices' },
-      { path: 'devices', component: DevicesComponent },
+      { path: 'devices', component: DevicesComponent }
     ]
   }
 ];

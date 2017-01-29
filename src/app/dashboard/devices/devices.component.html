@@ -1,3 +1,12 @@
-<p>
-  devices works!
-</p>
+<div class="col-md-4 col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Available devices</h4></div>
+        <div class="panel-body">
+            <div class="list-group">
+                <a class="list-group-item" *ngFor="let device of devices | async;">
+                    {{device}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
