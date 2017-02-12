@@ -60,7 +60,12 @@ export class SessionApi {
             });
     }
 
-    public logout(): Observable<any> {
+  /**
+   * Remove user session from the database
+   *
+   * @returns {Observable<Response>}
+   */
+  public logout(): Observable<any> {
       return this.http.request(this.basePath, new RequestOptions({
         method: RequestMethod.Delete
       }))

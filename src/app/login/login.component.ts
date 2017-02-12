@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this._sessionApi.login(this.credentials).subscribe(res => {
       this._httpClient.setToken(res);
 
-      this._sessionApi.retrieve().subscribe(res => {
+      this._sessionApi.retrieve().subscribe(() => {
         this._router.navigate(['/dashboard']);
       }, err => {
         console.log('getting user data error', err)
